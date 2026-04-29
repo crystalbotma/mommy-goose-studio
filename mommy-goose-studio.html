@@ -1,0 +1,2164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honest Baby Product Reviews for First-Time Moms | Mommy Goose Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&family=Playfair+Display:wght@400;500;600&family=Lora:ital@0;1&family=Dancing+Script:wght@400;700&family=Avenir+Next&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Avenir Light';
+            src: local('Avenir Light'), local('AvenirLTPro-Light'), 
+                 url('https://fonts.cdnfonts.com/css/avenir-next') format('woff2');
+            font-weight: 300;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #faf8f3;
+            --warm-grey: #8b8680;
+            --sage: #a4b8a0;
+            --soft-brown: #d4c4b0;
+            --dark-text: #3a3a38;
+            --border-light: #e8e3dd;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Avenir Light', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--cream);
+            color: var(--dark-text);
+            line-height: 1.75;
+            letter-spacing: 0.3px;
+            font-weight: 300;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Avenir Light', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-weight: 300;
+            letter-spacing: -0.5px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #fefdfb 0%, #f5f1eb 100%);
+            border-bottom: 1px solid var(--border-light);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2.2rem;
+            font-weight: 400;
+            color: var(--dark-text);
+            letter-spacing: 0px;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-family: 'Dancing Script', cursive;
+            cursor: pointer;
+        }
+
+        .logo-image {
+            width: 45px;
+            height: 45px;
+            display: inline-block;
+            flex-shrink: 0;
+        }
+
+        .tagline {
+            font-size: 0.9rem;
+            color: var(--warm-grey);
+            font-style: italic;
+            font-family: 'Avenir Light', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            letter-spacing: 0.2px;
+            font-weight: 300;
+        }
+
+        /* Category Banner */
+        .category-banner {
+            background: white;
+            border-bottom: 1px solid var(--border-light);
+            padding: 1rem 0;
+            position: sticky;
+            top: 80px;
+            z-index: 99;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+        }
+
+        .banner-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+        }
+
+        .category-btn {
+            padding: 0.7rem 1.2rem;
+            border: 1px solid var(--border-light);
+            background: transparent;
+            color: var(--dark-text);
+            font-family: 'Avenir Light', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 0.95rem;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            letter-spacing: 0.2px;
+            font-weight: 300;
+        }
+
+        .category-btn:hover {
+            border-color: var(--sage);
+            background: var(--cream);
+        }
+
+        .category-btn.active {
+            background: var(--sage);
+            color: white;
+            border-color: var(--sage);
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            min-height: calc(100vh - 300px);
+        }
+
+        .page-section {
+            display: none;
+        }
+
+        .page-section.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .page-title {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark-text);
+            font-weight: 300;
+            font-family: 'Avenir Light', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        .page-description {
+            color: var(--warm-grey);
+            font-family: 'Avenir Light', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+            letter-spacing: 0.2px;
+            font-weight: 300;
+        }
+
+        /* Checklist Section */
+        .checklist-section {
+            background: #fafaf8;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .checklist-title {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-text);
+            font-family: 'Avenir Light', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-weight: 300;
+        }
+
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+            font-family: 'Avenir Light', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-weight: 300;
+        }
+
+        .checklist-item::before {
+            content: "✓";
+            color: var(--sage);
+            font-weight: bold;
+            flex-shrink: 0;
+            font-size: 1.2rem;
+            line-height: 1.4;
+        }
+
+        /* Subcategory Tabs */
+        .subcategory-tabs {
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--border-light);
+        }
+
+        .subcategory-tab {
+            padding: 0.6rem 1rem;
+            background: transparent;
+            border: none;
+            color: var(--warm-grey);
+            font-family: 'Avenir Light', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border-bottom: 3px solid transparent;
+            white-space: nowrap;
+            letter-spacing: 0.2px;
+            font-weight: 300;
+        }
+
+        .subcategory-tab:hover {
+            color: var(--dark-text);
+        }
+
+        .subcategory-tab.active {
+            color: var(--sage);
+            border-bottom-color: var(--sage);
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .product-card {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            animation: slideUp 0.6s ease both;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .product-card:hover {
+            border-color: var(--sage);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            transform: translateY(-4px);
+        }
+
+        .product-rank {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--sage);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-name {
+            font-size: 1.4rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            color: var(--dark-text);
+            font-family: 'Avenir Light', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.3;
+        }
+
+        .product-description {
+            font-size: 0.95rem;
+            color: var(--warm-grey);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+            line-height: 1.8;
+            font-family: 'Avenir Light', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            letter-spacing: 0.2px;
+            font-weight: 300;
+        }
+
+        /* Affiliate Links */
+        .affiliate-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .affiliate-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.85rem 1.1rem;
+            border: 1px solid var(--border-light);
+            border-radius: 6px;
+            text-decoration: none;
+            color: var(--dark-text);
+            background: #fafaf8;
+            font-size: 0.9rem;
+            font-family: 'Avenir Light', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            transition: all 0.2s ease;
+            letter-spacing: 0.2px;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+
+        .affiliate-link:hover {
+            background: var(--sage);
+            color: white;
+            border-color: var(--sage);
+        }
+
+        .affiliate-link-label {
+            font-weight: 300;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-family: 'Avenir Light', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        .affiliate-price {
+            font-size: 0.8rem;
+            color: var(--sage);
+            font-weight: 400;
+            margin-left: 0.3rem;
+        }
+
+        .affiliate-link:hover .affiliate-price {
+            color: white;
+        }
+
+        .affiliate-link-icon {
+            display: none;
+        }
+
+        .affiliate-link-arrow {
+            color: inherit;
+            font-size: 0.8rem;
+            display: none;
+        }
+
+        /* Sources & References Section */
+        .sources-section {
+            background: white;
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+            padding: 4rem 2rem;
+            margin: 4rem 0;
+        }
+
+        .sources-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .sources-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--dark-text);
+            font-family: 'Avenir Light', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-weight: 300;
+        }
+
+        .sources-intro {
+            color: var(--warm-grey);
+            font-family: 'Avenir Light', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+            max-width: 800px;
+            font-weight: 300;
+        }
+
+        .sources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .source-card {
+            background: #fafaf8;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 1.75rem;
+            transition: all 0.3s ease;
+        }
+
+        .source-card:hover {
+            border-color: var(--sage);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .source-title {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: var(--dark-text);
+            margin-bottom: 0.75rem;
+            font-family: 'Avenir Light', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.4;
+        }
+
+        .source-description {
+            font-size: 0.9rem;
+            color: var(--warm-grey);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+            font-family: 'Avenir Light', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-weight: 300;
+        }
+
+        .source-link {
+            color: var(--sage);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 300;
+            font-family: 'Avenir Light', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            transition: color 0.2s ease;
+        }
+
+        .source-link:hover {
+            color: var(--dark-text);
+            text-decoration: underline;
+        }
+
+        .comparison-summary {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: #fefdfb;
+            border: 1px solid var(--border-light);
+            border-radius: 4px;
+        }
+
+        .comparison-summary h2 {
+            font-size: 1.5rem;
+            color: var(--dark-text);
+            margin-bottom: 1.5rem;
+            font-family: 'Avenir Light', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-weight: 300;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Avenir Light', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 0.95rem;
+        }
+
+        .comparison-table thead {
+            background: var(--soft-brown);
+            color: white;
+        }
+
+        .comparison-table th {
+            padding: 1rem;
+            text-align: left;
+            font-weight: 400;
+            border-bottom: 2px solid var(--border-light);
+        }
+
+        .comparison-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-light);
+            color: var(--dark-text);
+        }
+
+        .comparison-table tbody tr:hover {
+            background: #f5f3f0;
+        }
+
+        .comparison-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .sources-note {
+            background: #fefdfb;
+            border-left: 3px solid var(--sage);
+            padding: 1.5rem;
+            border-radius: 4px;
+            color: var(--warm-grey);
+            font-size: 0.9rem;
+            line-height: 1.8;
+            font-family: 'Avenir Light', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-weight: 300;
+        }
+
+        .sources-note p {
+            margin: 0;
+        }
+
+        .sources-note strong {
+            color: var(--dark-text);
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-text);
+            color: var(--cream);
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            font-weight: 300;
+            font-family: 'Avenir Light', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            letter-spacing: -0.3px;
+        }
+
+        .footer-section p {
+            font-size: 0.9rem;
+            color: #ccc;
+            line-height: 1.8;
+            font-family: 'Avenir Light', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            letter-spacing: 0.2px;
+            font-weight: 300;
+        }
+
+        .footer-section a {
+            color: var(--sage);
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #555;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .banner-container {
+                padding: 0 1rem;
+            }
+
+            .category-btn {
+                font-size: 0.85rem;
+                padding: 0.6rem 1rem;
+            }
+
+            .checklist-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .header-container {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+
+            .subcategory-tabs {
+                margin-bottom: 1.5rem;
+            }
+
+            .sources-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .sources-section {
+                padding: 2rem 1rem;
+            }
+
+            .sources-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div>
+                <div class="logo" onclick="goHome()"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAABCGlDQ1BJQ0MgUHJvZmlsZQAAeJxjYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiBEAwSk4sLGHADoKpv1yBqL+viUYcLcKakFicD6Q9ArFIEtBxopAiQLZIOYWuA2EkQtg2IXV5SUAJkB4DYRSFBzkB2CpCtkY7ETkJiJxcUgdT3ANk2uTmlyQh3M/Ck5oUGA2kOIJZhKGYIYnBncAL5H6IkfxEDg8VXBgbmCQixpJkMDNtbGRgkbiHEVBYwMPC3MDBsO48QQ4RJQWJRIliIBYiZ0tIYGD4tZ2DgjWRgEL7AwMAVDQsIHG5TALvNnSEfCNMZchhSgSKeDHkMyQx6QJYRgwGDIYMZAKbWPz9HbOBQAAACFElEQVR4nO3TsRHAIBDAsJD9d34W4NxCIU3gxmtmPuDsvx0ALzMIBINAMAgEg0AwCASDQDAIBINAMAgEg0AwCASDQDAIBINAMAgEg0AwCASDQDAIBINAMAgEg0AwCASDQDAIBINAMAgEg0AwCASDQDAIBINAMAgEg0AwCASDQDAIBINAMAgEg0AwCASDQDAIBINAMAgEg0AwCASDQDAIBINAMAgEg0AwCASDQDAIBINAMAgEg0AwCASDQDAIBINAMAgEg0AwCASDQDAIBINAMAgEg0AwCASDQDAIBINAMAgEg0AwCASDQDAIBINAMAgEg0AwCASDQDAIBINAMAgEg0AwCASDQDAIBINAMAgEg0AwCASDQDAIBINAMAgEg0AwCASDQDAIBINAMAgEg0AwCASDQDAIBINAMAgEg0AwCASDQDAIBINAMAgEg0AwCASDQDAIBINAMAgEg0AwCASDQNjdDQSNuMd5jwAAAABJRU5ErkJggg==" alt="Mommy Goose Logo" class="logo-image"> Mommy Goose Studio</div>
+                <p class="tagline">Honest advice on baby essentials reviewed by first time mom</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Category Banner -->
+    <div class="category-banner">
+        <div class="banner-container">
+            <button class="category-btn active" onclick="switchCategory('feeding', this)">Feeding</button>
+            <button class="category-btn" onclick="switchCategory('diapering', this)">Diapering</button>
+            <button class="category-btn" onclick="switchCategory('sleep', this)">Sleep & Nap Time</button>
+            <button class="category-btn" onclick="switchCategory('bathing', this)">Bathing & Grooming</button>
+            <button class="category-btn" onclick="switchCategory('health', this)">Health & Safety</button>
+            <button class="category-btn" onclick="switchCategory('travel', this)">Travel Gear</button>
+            <button class="category-btn" onclick="switchCategory('nursery', this)">Nursery & Daily Use</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+        <!-- FEEDING CATEGORY -->
+        <div class="page-section active" id="feeding">
+            <h1 class="page-title">Nursing & Feeding Essentials</h1>
+            <p class="page-description">Everything you need for bottle feeding, breastfeeding, and supplementation—tested through sleepless nights and countless feeds.</p>
+
+            <div class="checklist-section">
+                <h3 class="checklist-title">Feeding Essentials Checklist</h3>
+                <div class="checklist-grid">
+                    <div class="checklist-item">Bottles</div>
+                    <div class="checklist-item">Newborn bottle nipples</div>
+                    <div class="checklist-item">Bottle brush</div>
+                    <div class="checklist-item">Steriliser or sterilising bags</div>
+                    <div class="checklist-item">Formula, if not breastfeeding</div>
+                    <div class="checklist-item">Burp cloths</div>
+                    <div class="checklist-item">Bibs</div>
+                    <div class="checklist-item">Breast pump, if needed</div>
+                    <div class="checklist-item">Milk storage bags, if needed</div>
+                    <div class="checklist-item">Nursing bras</div>
+                    <div class="checklist-item">Nipple cream</div>
+                    <div class="checklist-item">Nursing pillow</div>
+                    <div class="checklist-item">Muslin cloths</div>
+                </div>
+            </div>
+
+            <!-- Subcategories -->
+            <div class="subcategory-tabs">
+                <button class="subcategory-tab active" onclick="switchSubcategory('feeding-bottles', this)">Bottles</button>
+                <button class="subcategory-tab" onclick="switchSubcategory('feeding-pumps', this)">Breast Pumps</button>
+                <button class="subcategory-tab" onclick="switchSubcategory('feeding-brushes', this)">Brushes</button>
+                <button class="subcategory-tab" onclick="switchSubcategory('feeding-burp', this)">Burp Cloths</button>
+                <button class="subcategory-tab" onclick="switchSubcategory('feeding-storage', this)">Milk Storage Bags</button>
+                <button class="subcategory-tab" onclick="switchSubcategory('feeding-nipple', this)">Nipple Cream</button>
+                <button class="subcategory-tab" onclick="switchSubcategory('feeding-accessories', this)">Nursing Pillow</button>
+                <button class="subcategory-tab" onclick="switchSubcategory('feeding-sterilizers', this)">Sterilizers</button>
+            </div>
+
+            <div id="feeding-bottles" class="subcategory-content"></div>
+            <div id="feeding-pumps" class="subcategory-content" style="display:none;"></div>
+            <div id="feeding-brushes" class="subcategory-content" style="display:none;"></div>
+            <div id="feeding-burp" class="subcategory-content" style="display:none;"></div>
+            <div id="feeding-storage" class="subcategory-content" style="display:none;"></div>
+            <div id="feeding-nipple" class="subcategory-content" style="display:none;"></div>
+            <div id="feeding-accessories" class="subcategory-content" style="display:none;"></div>
+            <div id="feeding-sterilizers" class="subcategory-content" style="display:none;"></div>
+        </div>
+
+        <!-- DIAPERING CATEGORY -->
+        <div class="page-section" id="diapering">
+            <h1 class="page-title">Diapering Essentials</h1>
+            <p class="page-description">From newborn diapers to changing mats—the essentials that make diaper changes easier and faster.</p>
+
+            <div class="checklist-section">
+                <h3 class="checklist-title">Diapering Essentials Checklist</h3>
+                <div class="checklist-grid">
+                    <div class="checklist-item">Newborn diapers</div>
+                    <div class="checklist-item">Baby wipes</div>
+                    <div class="checklist-item">Diaper rash cream</div>
+                    <div class="checklist-item">Changing mat or pad</div>
+                    <div class="checklist-item">Diaper bag</div>
+                    <div class="checklist-item">Nappy bin or disposal bags</div>
+                    <div class="checklist-item">Portable changing mat</div>
+                </div>
+            </div>
+
+            <div class="subcategory-tabs">
+                <button class="subcategory-tab active" onclick="switchSubcategory('diapering-newborn', this)">Newborn Diapers</button>
+                <button class="subcategory-tab" onclick="switchSubcategory('diapering-wipes', this)">Baby Wipes</button>
+                <button class="subcategory-tab" onclick="switchSubcategory('diapering-rash', this)">Diaper Rash Cream</button>
+                <button class="subcategory-tab" onclick="switchSubcategory('diapering-mats', this)">Changing Mats</button>
+                <button class="subcategory-tab" onclick="switchSubcategory('diapering-bags', this)">Diaper Bags</button>
+                <button class="subcategory-tab" onclick="switchSubcategory('diapering-disposal', this)">Disposal</button>
+            </div>
+
+            <div id="diapering-newborn" class="subcategory-content"></div>
+            <div id="diapering-wipes" class="subcategory-content" style="display:none;"></div>
+            <div id="diapering-rash" class="subcategory-content" style="display:none;"></div>
+            <div id="diapering-mats" class="subcategory-content" style="display:none;"></div>
+            <div id="diapering-bags" class="subcategory-content" style="display:none;"></div>
+            <div id="diapering-disposal" class="subcategory-content" style="display:none;"></div>
+        </div>
+
+        <!-- SLEEP CATEGORY -->
+        <div class="page-section" id="sleep">
+            <h1 class="page-title">Sleep & Nap Time Essentials</h1>
+            <p class="page-description">Create a safe, comfortable sleep environment with the right crib, mattress, and bedding.</p>
+
+            <div class="checklist-section">
+                <h3 class="checklist-title">Sleep Essentials Checklist</h3>
+                <div class="checklist-grid">
+                    <div class="checklist-item">Crib, cot, or bassinet</div>
+                    <div class="checklist-item">Firm newborn mattress</div>
+                    <div class="checklist-item">Fitted sheets</div>
+                    <div class="checklist-item">Swaddles</div>
+                    <div class="checklist-item">Sleep sacks</div>
+                    <div class="checklist-item">Waterproof mattress protector</div>
+                    <div class="checklist-item">Baby monitor, if wanted</div>
+                </div>
+            </div>
+
+            <div class="subcategory-tabs">
+                <button class="subcategory-tab active" onclick="switchSubcategory('sleep-beds', this)">Beds & Bassinets</button>
+                <button class="subcategory-tab" onclick="switchSubcategory('sleep-mattresses', this)">Mattresses</button>
+                <button class="subcategory-tab" onclick="switchSubcategory('sleep-bedding', this)">Bedding</button>
+                <button class="subcategory-tab" onclick="switchSubcategory('sleep-swaddles', this)">Swaddles</button>
+                <button class="subcategory-tab" onclick="switchSubcategory('sleep-monitors', this)">Monitors</button>
+            </div>
+
+            <div id="sleep-beds" class="subcategory-content"></div>
+            <div id="sleep-mattresses" class="subcategory-content" style="display:none;"></div>
+            <div id="sleep-bedding" class="subcategory-content" style="display:none;"></div>
+            <div id="sleep-swaddles" class="subcategory-content" style="display:none;"></div>
+            <div id="sleep-monitors" class="subcategory-content" style="display:none;"></div>
+        </div>
+
+        <!-- BATHING CATEGORY -->
+        <div class="page-section" id="bathing">
+            <h1 class="page-title">Bathing & Grooming Essentials</h1>
+            <p class="page-description">Gentle products and tools for safe, calm bath time and daily grooming.</p>
+
+            <div class="checklist-section">
+                <h3 class="checklist-title">Bathing & Grooming Essentials Checklist</h3>
+                <div class="checklist-grid">
+                    <div class="checklist-item">Baby bathtub</div>
+                    <div class="checklist-item">Soft baby towels</div>
+                    <div class="checklist-item">Washcloths</div>
+                    <div class="checklist-item">Gentle baby wash</div>
+                    <div class="checklist-item">Baby shampoo</div>
+                    <div class="checklist-item">Soft hair brush</div>
+                    <div class="checklist-item">Nail clippers or file</div>
+                    <div class="checklist-item">Soft sponge</div>
+                </div>
+            </div>
+
+            <div class="subcategory-tabs">
+                <button class="subcategory-tab active" onclick="switchSubcategory('bathing-tubs', this)">Bath Tubs</button>
+                <button class="subcategory-tab" onclick="switchSubcategory('bathing-products', this)">Bath Products</button>
+                <button class="subcategory-tab" onclick="switchSubcategory('bathing-tools', this)">Tools & Accessories</button>
+            </div>
+
+            <div id="bathing-tubs" class="subcategory-content"></div>
+            <div id="bathing-products" class="subcategory-content" style="display:none;"></div>
+            <div id="bathing-tools" class="subcategory-content" style="display:none;"></div>
+        </div>
+
+        <!-- HEALTH & SAFETY CATEGORY -->
+        <div class="page-section" id="health">
+            <h1 class="page-title">Health & Safety Essentials</h1>
+            <p class="page-description">Must-haves for monitoring baby's health, treating minor issues, and keeping everything clean and safe.</p>
+
+            <div class="checklist-section">
+                <h3 class="checklist-title">Health & Safety Essentials Checklist</h3>
+                <div class="checklist-grid">
+                    <div class="checklist-item">Digital thermometer</div>
+                    <div class="checklist-item">Nasal aspirator</div>
+                    <div class="checklist-item">Saline drops</div>
+                    <div class="checklist-item">Medicine dispenser</div>
+                    <div class="checklist-item">First aid basics</div>
+                    <div class="checklist-item">Baby-safe laundry detergent</div>
+                    <div class="checklist-item">Dummies or pacifiers</div>
+                </div>
+            </div>
+
+            <div class="subcategory-tabs">
+                <button class="subcategory-tab active" onclick="switchSubcategory('health-monitoring', this)">Monitoring</button>
+                <button class="subcategory-tab" onclick="switchSubcategory('health-care', this)">Health Care</button>
+                <button class="subcategory-tab" onclick="switchSubcategory('health-cleaning', this)">Cleaning & Safety</button>
+            </div>
+
+            <div id="health-monitoring" class="subcategory-content"></div>
+            <div id="health-care" class="subcategory-content" style="display:none;"></div>
+            <div id="health-cleaning" class="subcategory-content" style="display:none;"></div>
+        </div>
+
+        <!-- TRAVEL GEAR CATEGORY -->
+        <div class="page-section" id="travel">
+            <h1 class="page-title">Travel Gear Essentials</h1>
+            <p class="page-description">Portable gear that makes traveling with a baby easier and safer.</p>
+
+            <div class="checklist-section">
+                <h3 class="checklist-title">Travel Gear Essentials Checklist</h3>
+                <div class="checklist-grid">
+                    <div class="checklist-item">Infant car seat</div>
+                    <div class="checklist-item">Stroller or pram</div>
+                    <div class="checklist-item">Baby carrier or wrap</div>
+                    <div class="checklist-item">Car seat cover</div>
+                    <div class="checklist-item">Changing pouch</div>
+                </div>
+            </div>
+
+            <div class="subcategory-tabs">
+                <button class="subcategory-tab active" onclick="switchSubcategory('travel-seats', this)">Car Seats</button>
+                <button class="subcategory-tab" onclick="switchSubcategory('travel-strollers', this)">Strollers</button>
+                <button class="subcategory-tab" onclick="switchSubcategory('travel-carriers', this)">Carriers</button>
+                <button class="subcategory-tab" onclick="switchSubcategory('travel-accessories', this)">Accessories</button>
+            </div>
+
+            <div id="travel-seats" class="subcategory-content"></div>
+            <div id="travel-strollers" class="subcategory-content" style="display:none;"></div>
+            <div id="travel-carriers" class="subcategory-content" style="display:none;"></div>
+            <div id="travel-accessories" class="subcategory-content" style="display:none;"></div>
+        </div>
+
+        <!-- NURSERY & DAILY USE CATEGORY -->
+        <div class="page-section" id="nursery">
+            <h1 class="page-title">Nursery & Daily Use Essentials</h1>
+            <p class="page-description">Furnishings and daily items that make your nursery functional and welcoming.</p>
+
+            <div class="checklist-section">
+                <h3 class="checklist-title">Nursery & Daily Use Essentials Checklist</h3>
+                <div class="checklist-grid">
+                    <div class="checklist-item">Moses basket or storage</div>
+                    <div class="checklist-item">Night light</div>
+                    <div class="checklist-item">Laundry hamper</div>
+                    <div class="checklist-item">Blanket for supervised use</div>
+                    <div class="checklist-item">Play mat</div>
+                    <div class="checklist-item">Bouncer or rocker</div>
+                    <div class="checklist-item">White noise machine</div>
+                    <div class="checklist-item">Bottle warmer</div>
+                    <div class="checklist-item">Wipe warmer</div>
+                    <div class="checklist-item">Nursery chair</div>
+                </div>
+            </div>
+
+            <div class="subcategory-tabs">
+                <button class="subcategory-tab active" onclick="switchSubcategory('nursery-furniture', this)">Furniture</button>
+                <button class="subcategory-tab" onclick="switchSubcategory('nursery-decor', this)">Decor & Lighting</button>
+                <button class="subcategory-tab" onclick="switchSubcategory('nursery-equipment', this)">Equipment</button>
+            </div>
+
+            <div id="nursery-furniture" class="subcategory-content"></div>
+            <div id="nursery-decor" class="subcategory-content" style="display:none;"></div>
+            <div id="nursery-equipment" class="subcategory-content" style="display:none;"></div>
+        </div>
+
+    </div>
+
+    <!-- Sources & References Section -->
+    <section class="sources-section">
+        <div class="sources-container">
+            <h2 class="sources-title">Sources & References</h2>
+            <p class="sources-intro">Our product recommendations are informed by expert research, parental reviews, and trusted sources in the baby care community. Here are the key references we consulted:</p>
+            
+            <div class="sources-grid">
+                <div class="source-card">
+                    <h3 class="source-title">The Complete Guide to Newborn Feeding: Bottles, Breast Pumps & Formula</h3>
+                    <p class="source-description">Babylist's comprehensive guide covering everything new parents need to know about feeding essentials, from choosing the right bottle to understanding different nipple flows and anti-colic features.</p>
+                    <a href="https://www.babylist.com/hello-baby/newborn-feeding-essentials" target="_blank" rel="noopener noreferrer" class="source-link">Read on Babylist →</a>
+                </div>
+
+                <div class="source-card">
+                    <h3 class="source-title">Best Baby Bottles: Expert Reviews & Comparisons</h3>
+                    <p class="source-description">Babylist's detailed breakdown of the top-rated baby bottles on the market, including Dr. Brown's, Philips Avent, and MAM options, with real parent feedback and expert recommendations.</p>
+                    <a href="https://www.babylist.com/hello-baby/best-baby-bottles" target="_blank" rel="noopener noreferrer" class="source-link">Read on Babylist →</a>
+                </div>
+
+                <div class="source-card">
+                    <h3 class="source-title">Diapering Essentials: What New Parents Really Need</h3>
+                    <p class="source-description">Complete guide to diapering must-haves including diapers, wipes, creams, and changing stations. Babylist breaks down what's essential versus nice-to-have for busy parents.</p>
+                    <a href="https://www.babylist.com/hello-baby/diapering-essentials" target="_blank" rel="noopener noreferrer" class="source-link">Read on Babylist →</a>
+                </div>
+
+                <div class="source-card">
+                    <h3 class="source-title">Safe Sleep for Newborns: Cribs, Bassinets & Bedding</h3>
+                    <p class="source-description">Babylist's expert recommendations on creating a safe sleep environment, including information on cribs, mattresses, sleep sacks, and products that support healthy newborn sleep.</p>
+                    <a href="https://www.babylist.com/hello-baby/newborn-sleep-essentials" target="_blank" rel="noopener noreferrer" class="source-link">Read on Babylist →</a>
+                </div>
+
+                <div class="source-card">
+                    <h3 class="source-title">Baby Bath Time: Essential Products & Safety Tips</h3>
+                    <p class="source-description">Guide to bathing and grooming essentials for newborns and infants. Babylist covers safe bath products, gentle cleansers, and tools that make bathing easier for first-time parents.</p>
+                    <a href="https://www.babylist.com/hello-baby/baby-bath-essentials" target="_blank" rel="noopener noreferrer" class="source-link">Read on Babylist →</a>
+                </div>
+
+                <div class="source-card">
+                    <h3 class="source-title">Travel with Baby: Gear Guide for On-the-Go Parents</h3>
+                    <p class="source-description">Babylist's complete breakdown of travel essentials including car seats, strollers, carriers, and portable gear. Real parent reviews and expert recommendations for traveling safely with infants.</p>
+                    <a href="https://www.babylist.com/hello-baby/travel-gear" target="_blank" rel="noopener noreferrer" class="source-link">Read on Babylist →</a>
+                </div>
+            </div>
+
+            <div class="sources-note">
+                <p><strong>Note:</strong> Mommy Goose Studio curates products based on extensive research, parent reviews, and expert recommendations. We prioritize safety, quality, and value in every recommendation. Many of our featured products appear in Babylist's guides and are consistently recommended by parenting experts and communities.</p>
+            </div>
+        </div>
+    </section>
+
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Mommy Goose</h3>
+                <p>I'm a first-time mom who's tested hundreds of baby products through sleepless nights and countless diaper changes. This guide is my honest, no-fluff review collection to help you skip the junk and find what actually works.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Affiliate Transparency</h3>
+                <p>I earn commissions when you shop through my links at no extra cost to you. I only recommend products I've personally tested and genuinely believe will help your family.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="#" onclick="switchCategory('feeding', event.target)">Feeding</a><br><a href="#" onclick="switchCategory('sleep', event.target)">Sleep</a><br><a href="#" onclick="switchCategory('travel', event.target)">Travel</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Mommy Goose Studio. All rights reserved. | <a href="#">Privacy Policy</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // PRODUCT DATA
+        const products = {
+            'feeding-bottles': [
+                {
+                    rank: 1,
+                    name: "Dr. Brown's Options+ Anti-Colic",
+                    description: "The bottle I started with—strong anti-colic design, excellent for preventing gas and fussiness. Every parent I know has tried these.",
+                    amazon: "https://amzn.to/490RyK2",
+                    amazonPrice: "AED 89",
+                    noon: "https://s.noon.com/s4D74oCaaUM",
+                    noonPrice: "AED 99",
+                    mumzworld: "https://www.firstcry.ae/dr-browns/dr-browns-options-pp-narrow-anti-colic-feeding-bottle-set-17pc-bpa-free-blue-0m/ae906ae43dfe0/product-detail?sterm=Dr.%20Brown%27s%20Natural%20Flow%C2%AE%20Anti-Colic%20Options%20%E2%84%A2%20Narrow%20Bottle&spos=28&sstock=1",
+                    mumzworldPrice: "AED 95"
+                },
+                {
+                    rank: 2,
+                    name: "Philips Avent Natural / Natural Response",
+                    description: "If you're breastfeeding, these are a game-changer. Wide neck, easy to clean, and the latch transition feels natural.",
+                    amazon: "https://amzn.to/4tul57k",
+                    amazonPrice: "AED 115",
+                    noon: "https://www.noon.com/uae-en/natural-response-baby-feeding-bottle-newborn-gift-set-4-bottles-2x260ml-2x125ml-with-brush-and-soother-no-1-brand-recommended-by-moms-worldwide-natural-response-technology-mimics-breastfeeding-uniquely-designed-nipple-releases-milk-only-when-baby-dri/N29640111A/p/?utm_source=c1000087L&utm_medium=cpc&utm_campaign=C1000163166N_ae_en_web_babynonconsumablesx24042024_noon_web_c1000087l_remarketing_plassc_&gclid=CjwKCAjw46HPBhAMEiwASZpLRAy31brQMnTF287hdIzXVvx6prxQ7AJSPgPc1bVgOikX801-4GiQjRoCnHcQAvD_BwE&o=ec310e05e3038ecf&shareId=881b7dec-a480-4fb1-8917-aacff80a8b70",
+                    noonPrice: "AED 125",
+                    mumzworld: "https://www.firstcry.ae/philips-avent/philips-avent-natural-response-newborn-gift-set-4-pieces-bpa-free-bottles-pacifier-anti-colic-easy-to-combine-breast-bottle-feeding/0e96bae797ac9/product-detail?ref=!!!SEM_GSN_Std_Shopping_Feeding!!!&gad_source=1&gad_campaignid=21264142921&gbraid=0AAAAACv9CAf2v2D0Hkvhmv45NRfZZ_bvm&gclid=CjwKCAjw46HPBhAMEiwASZpLRLWqJN9GsQskYCOeoRWBB4L5aKY456g7ZEUSVwry8lkkb2Ap-9yIHxoCVxwQAvD_BwE",
+                    mumzworldPrice: "AED 119"
+                },
+                {
+                    rank: 3,
+                    name: "Tommee Tippee Closer to Nature",
+                    description: "Breast-like nipple shape for natural latch; anti-colic valve to reduce air intake. Great for breastfeeding parents.",
+                    amazon: "https://amzn.to/4dWsXJU",
+                    amazonPrice: "AED 79",
+                    noon: "https://www.noon.com/uae-en/baby-bottles-slow-flow-150ml-pack-of-3/ZF3CB7882CE50FEAD7733Z/p/?o=zf3cb7882ce50fead7733z-1",
+                    noonPrice: "AED 85",
+                    mumzworld: "https://strollerpark.com/product/tommee-tippee-closer-to-nature-baby-bottle-150-ml-pp-0-months-pack-of-3/?srsltid=AfmBOoq1j_jp9vGoyISZc5Th4IxkMOVZFtMyC0lkJEBG820eDbPqIGxN8H4",
+                    mumzworldPrice: "AED 82",
+                    retailerName: "StrollerPark",
+                    retailer: "strollerpark"
+                },
+                {
+                    rank: 4,
+                    name: "Lansinoh Anti-Colic Bottles",
+                    description: "Frequently recommended for combo feeding and breast-to-bottle transition.",
+                    amazon: "https://amzn.to/4tLsMGx",
+                    noon: "https://s.noon.com/i9ZQoIico3Q",
+                    mumzworld: ""
+                },
+                {
+                    rank: 5,
+                    name: "Comotomo Baby Bottle",
+                    description: "Still trendy because of the soft silicone, breast-like feel, and easy-clean design.",
+                    amazon: "https://amzn.to/48dZojs",
+                    noon: "https://s.noon.com/Csw--NigenI",
+                    mumzworld: ""
+                }
+            ],
+            'feeding-brushes': [
+                {
+                    rank: 1,
+                    name: "Pigeon Bottle & Nipple Brush",
+                    description: "Huge review volume in regional retail, practical and proven.",
+                    amazon: "https://amzn.to/4sOAJJG",
+                    noon: "https://www.noon.com/uae-en/bottle-and-nipple-cleaning-brush/Z8BFDA3F4D135BF8F254AZ/p/?o=z8bfda3f4d135bf8f254az-1&shareId=82f899d3-354a-41a5-b549-55219585beb1",
+                    mumzworld: "https://www.mumzworld.com/en/bottle-and-nipple-brush?geo=false&gad_source=4&gad_campaignid=20458033598&gbraid=0AAAAADuw6q5tjiqMB4p2v-00qP0x3Ndl9&gclid=CjwKCAjw46HPBhAMEiwASZpLRJkVECHrts5jvx4sBObxe64_sNIJCFCQAREN_BqihlmeYngnzGYzwxoCvqUQAvD_BwE"
+                },
+                {
+                    rank: 2,
+                    name: "NUK 2-in-1 Bottle Brush",
+                    description: "Common staple, trusted brand, separate nipple-cleaning section helps.",
+                    amazon: "https://amzn.to/4vFmWb3",
+                    noon: "https://www.noon.com/uae-en/2-in-1-bottle-brush-with-teat/N24547691A/p/?o=f4af83c22f75cb2c&shareId=4a193011-4a40-49de-940b-ec2ce908571f",
+                    mumzworld: ""
+                },
+                {
+                    rank: 3,
+                    name: "Chicco Silicone Bottle Brush",
+                    description: "Good for gentler scrubbing and durability.",
+                    amazon: "https://amzn.to/4tupVl0",
+                    noon: "https://www.noon.com/uae-en/silicone-bottle-brush-blue-30x12x3cm/N36357493A/p/?o=df99c1cd27161b4b&shareId=d86015b9-8403-42a9-9080-973b0de21099",
+                    mumzworld: "https://www.mumzworld.com/en/chicco-silicone-bottle-brush-blue?geo=false&srsltid=AfmBOopfstVROEBnO_BKtVfbafbKp0SD6KEu9DKshli2u6nHXlsg7m6ZshI"
+                },
+                {
+                    rank: 4,
+                    name: "Ubbi Deluxe Bottle Brush Set",
+                    description: "Good design details, tidy storage, higher-end feel.",
+                    amazon: "https://amzn.to/4cWHXqa",
+                    noon: "https://www.noon.com/uae-en/ubbi-deluxe-baby-bottle-brush-set-bottle-brush-and-nipple-brush-with-suction-cup-baby-cleaning-essentials-set-of-2-taupe/ZE13907F7453900878AEDZ/p/?o=e4c496fe5edb660c&shareId=682ac79f-6b20-4723-85e8-dd2bcf288baa",
+                    mumzworld: ""
+                },
+                {
+                    rank: 5,
+                    name: "Haakaa Silicone Cleaning Brush",
+                    description: "Popular among parents already using Haakaa feeding gear.",
+                    amazon: "https://amzn.to/4tjTcia",
+                    noon: "https://s.noon.com/mOH9xKa8sGs",
+                    mumzworld: ""
+                }
+            ],
+            'feeding-sterilizers': [
+                {
+                    rank: 1,
+                    name: "Baby Brezza One Step Sterilizer Dryer",
+                    description: "The strongest 'do-it-all' favorite—steam plus drying in one. Game-changer for busy parents.",
+                    amazon: "https://amzn.to/48ZW9w4",
+                    noon: "https://www.noon.com/uae-en/baby-brezza-bottle-sterilizer-and-dryer-advanced-electric-steam-sterilization-machine-universal-sterilizing-for-all-bottles-plastic-glass-pacifiers-breast-pump-parts-hepa-filtration-white/N49686763A/p/?utm_source=c1000088L&utm_medium=cpc&utm_campaign=C1000170266N_ae_en_web_noonbrandedxxexactbroadmatchxxxxsembrandedxx01042025_noon_web_c1000088l_remarketing_sembranded_&gclid=CjwKCAjw46HPBhAMEiwASZpLRNobDCgEMx_hvlDGYC4EqHU4Ze_3oCT_jLuZ-jJ2hrZoowfM2sLzWhoCl_QQAvD_BwE&o=ad536e174f154abc&shareId=16fc8659-0b04-44b3-8485-2e29aa07eeaa",
+                    mumzworld: "https://www.firstcry.ae/baby-brezza/baby-brezza-bottle-sterilizer-and-dryer-advanced-electric-steam-sterilization-machine-universal-sterilizing-for-all-bottles-plastic-glass-pacifiers-breast-pump-parts-hepa-filtration-0-months-28-3-x-21-x-41-2-cm-white/4de71aea26b28/product-detail?ref=!!!SEM_GSN_Std_Shopping_Feeding!!!&gad_source=4&gad_campaignid=21264142921&gbraid=0AAAAACv9CAeN7Ta7dCK-28jueF6guZ_5B&gclid=CjwKCAjw46HPBhAMEiwASZpLRDz-yLuI-FSwTQj5mYW5-FXGL6c7yIfwT1yoHE4ctHiQMOmm3y6ApxoCAucQAvD_BwE",
+                    retailerName: "FirstCry",
+                    retailer: "firstcry"
+                },
+                {
+                    rank: 2,
+                    name: "Philips Avent Premium Sterilizer",
+                    description: "Established, widely available, and easy to pair with Avent feeding gear.",
+                    amazon: "https://amzn.to/4mERMw4",
+                    noon: "https://noon.com/uae/en/search?q=Avent+Sterilizer",
+                    mumzworld: "https://www.firstcry.ae/philips-avent/philips-avent-advanced-baby-bottle-sterilizer-kills-99-9-of-harmful-germs-roomy-inside-compact-outside-sterilizes-in-10-minutes-0-months-30-4-x-18-3-x-35-9-cm-white/c8f67ae655760/product-detail?ref=!!!SEM_GSN_Std_Shopping_Feeding!!!&gad_source=4&gad_campaignid=21264142921&gbraid=0AAAAACv9CAeN7Ta7dCK-28jueF6guZ_5B&gclid=CjwKCAjw46HPBhAMEiwASZpLRNPafXDbV9sMgMGwIU--a9IEu0W3pAKi4QyNDA_zMyA5FgtPB0wFDhoCi_wQAvD_BwE",
+                    retailerName: "FirstCry",
+                    retailer: "firstcry"
+                },
+                {
+                    rank: 3,
+                    name: "GROWNSY Bottle Sterilizer and Dryer",
+                    description: "Affordable and widely stocked.",
+                    amazon: "https://amzn.to/4eBJnHK",
+                    noon: "https://www.firstcry.ae/grownsy/grownsy-bottle-sterilizer-kills-99-9-harmful-bacteria-chemical-free-bpa-free-0-months-5-bottles-white/49adcaed51938/product-detail?ref=!!!SEM_GSN_Std_Shopping_Feeding!!!&gad_source=1&gad_campaignid=21264142921&gbraid=0AAAAACv9CAf2v2D0Hkvhmv45NRfZZ_bvm&gclid=CjwKCAjw46HPBhAMEiwASZpLRH9cEsVkmI9FN8teF3dSroZxzZtbcWp6_arl6-Rwq4LoxVTgYkkC6hoCOGUQAvD_BwE",
+                    noonName: "FIRSTCRY",
+                    mumzworld: "https://www.mumzworld.com/en/grownsy-electric-bottle-sterilizer-and-dryer-38939729-grw916?geo=false&gad_source=1&gad_campaignid=20458033598&gbraid=0AAAAADuw6q5IaGvx8im6GZLXtm1T0wAfZ&gclid=CjwKCAjw46HPBhAMEiwASZpLRM9KGvItVKPXj2gEYC7Z3zltYZOpNUVm6SHwSTGaEjF6LmRQvaZz9hoCsjwQAvD_BwE",
+                    retailerName: "MUMZWORLD",
+                    retailer: "mumzworld"
+                },
+                {
+                    rank: 4,
+                    name: "MAM Self-Sterilizing Bottles",
+                    description: "Not a full machine, but parents like this shortcut a lot.",
+                    amazon: "https://amzn.to/4cWgUey",
+                    noon: "https://www.noon.com/uae-en/easy-start-self-sterilising-anti-colic-bottle-pack-of-3-3-x-260-ml-mam-baby-bottles-with-medium-flow-teats-size-2-newborn-essentials-seashell-designs-may-vary/Z7AE8CCFD4ECEA6AC9236Z/p/?o=e788eedb3d293eeb&shareId=fed8c1bb-b223-4a29-811f-8f1fc39e0336",
+                    mumzworld: ""
+                },
+                {
+                    rank: 5,
+                    name: "Medela Quick Clean Micro-Steam Bags",
+                    description: "A classic low-space option for bottles and pump parts.",
+                    amazon: "https://amzn.to/4vLR6Ju",
+                    noon: "https://noon.com/uae/en/search?q=Medela+Steam+Bags",
+                    mumzworld: ""
+                }
+            ],
+            'feeding-storage': [
+                {
+                    rank: 1,
+                    name: "Medela Easy Pour Breast Milk Storage Bags",
+                    description: "Very established, easy to find, strong parent familiarity.",
+                    amazon: "https://amzn.to/4tv1EeE",
+                    noon: "https://s.noon.com/_SudEgF_z-4",
+                    mumzworld: ""
+                },
+                {
+                    rank: 2,
+                    name: "Lansinoh Breastmilk Storage Bags",
+                    description: "One of the most common mainstream picks.",
+                    amazon: "https://amzn.to/4e3xNFl",
+                    noon: "https://s.noon.com/M90NAWSoIWs",
+                    mumzworld: ""
+                },
+                {
+                    rank: 3,
+                    name: "Momcozy Breastmilk Storage Bags",
+                    description: "Trending because of features like temp-sensing versions.",
+                    amazon: "https://amzn.to/3OnJ493",
+                    noon: "https://s.noon.com/H62zIfkqKUw",
+                    mumzworld: ""
+                }
+            ],
+            'feeding-nipple': [
+                {
+                    rank: 1,
+                    name: "Earth Mama Organic Nipple Butter",
+                    description: "Current overall standout in Babylist's roundup.",
+                    amazon: "https://amzn.to/3QGZkm9",
+                    noon: "https://s.noon.com/Z2x4IzuZVJQ",
+                    mumzworld: ""
+                },
+                {
+                    rank: 2,
+                    name: "Lansinoh Lanolin Nipple Cream",
+                    description: "The classic mainstream staple.",
+                    amazon: "https://amzn.to/4sP9SwO",
+                    noon: "https://s.noon.com/JIOXxN4o3NE",
+                    mumzworld: ""
+                },
+                {
+                    rank: 3,
+                    name: "Honest Mama Nip Balm",
+                    description: "Popular natural-leaning balm option.",
+                    amazon: "https://amzn.to/3OHdG5t",
+                    noon: "https://www.noon.com/uae-en/the-honest-company-honest-mama-calm-your-nip-balm-nourishing-soothing-nipple-cream-for-nursing-naturally-derived-safe-for-sensitive-skin-1-75-fl-oz/Z6460AD6B21077ED74DECZ/p/?utm_source=c1000088L&utm_medium=cpc&utm_campaign=C1000170266N_ae_en_web_noonbrandedxxexactbroadmatchxxxxsembrandedxx01042025_noon_web_c1000088l_remarketing_sembranded_&gclid=CjwKCAjwhqfPBhBWEiwAZo196h70QtH_rmqB6_evxQkoCx-zRxzjx6nMX2RvSxi34StbVnnXpRiVEBoCsqIQAvD_BwE&o=f8eb4ad737b9f0ab&shareId=5f2c3c55-83a3-4f98-98c3-0f37401585d6",
+                    mumzworld: ""
+                },
+                {
+                    rank: 4,
+                    name: "Motherlove Nipple Cream",
+                    description: "Commonly recommended in natural-product circles.",
+                    amazon: "https://amzn.to/4u4gYP1",
+                    noon: "https://s.noon.com/3co1pJR5KZM",
+                    mumzworld: ""
+                },
+                {
+                    rank: 5,
+                    name: "Bamboobies Boob-Ease Nipple Balm",
+                    description: "Another frequent parent favorite.",
+                    amazon: "https://amzn.to/4n50LXX",
+                    noon: "https://s.noon.com/ayk7DQHP3Ok",
+                    mumzworld: ""
+                }
+            ],
+            'feeding-pumps': [
+                {
+                    rank: 1,
+                    name: "Spectra S1 Plus",
+                    description: "The safest overall recommendation for most parents, powerful and rechargeable.",
+                    amazon: "https://amzn.to/4sONeVk",
+                    noon: "https://s.noon.com/2SlNq2D0eNY",
+                    mumzworld: "https://www.firstcry.ae/spectra/spectra-s1-plus-hospital-grade-electric-breast-pump-24mm/6bf23ae020422/product-detail?ref=!!!SEM_GSN_Std_Shopping_Feeding!!!&gad_source=4&gad_campaignid=21264142921&gbraid=0AAAAACv9CAe9yueAgzd1i2v4_Iwyx5o6k&gclid=CjwKCAjw46HPBhAMEiwASZpLRPmomGg7bXvm_XmabX0LH5mbt9f6NQVtan-pCgmItW3JLc1dplrmDhoCkYAQAvD_BwE",
+                    retailerName: "FirstCry",
+                    retailer: "firstcry"
+                },
+                {
+                    rank: 2,
+                    name: "Willow Go",
+                    description: "One of the strongest wearable-pump picks right now.",
+                    amazon: "https://amzn.to/41Tdpzl",
+                    noon: "https://s.noon.com/sY6rfuBcy0k",
+                    mumzworld: "https://www.desertcart.ae/products/537790097-willow-go-hands-free-breast-pump-wearable-breastfeeding-pump-portable",
+                    noonName: "DESERTCART",
+                    retailerName: "DESERTCART",
+                    retailer: "desertcart"
+                },
+                {
+                    rank: 3,
+                    name: "Momcozy Air 1 / wearable range",
+                    description: "Trending hard for hands-free pumping and price accessibility.",
+                    amazon: "https://amzn.to/4vJ6k1Q",
+                    noon: "https://s.noon.com/mr4cUCOUyFQ",
+                    mumzworld: "https://momcozy.com/products/momcozy-air-1-ultra-slim-breast-pump?currency=USD&variant=45361874174150&utm_source=google&utm_medium=cpc&utm_campaign=Google+Shopping&stkn=c4eb900d4851&srsltid=AfmBOorB0kl82cp7LsWekilUY5Mr_-3DfuwRsE1-TPdnmhHnf1Cydzgw-3M",
+                    noonName: "MOMCOZY",
+                    retailerName: "MOMCOZY",
+                    retailer: "momcozy"
+                },
+                {
+                    rank: 4,
+                    name: "BabyBuddha 2.0",
+                    description: "Strong option for parents who want portability with serious suction.",
+                    amazon: "https://amzn.to/3OnkCVj",
+                    noon: "https://s.noon.com/GPHJ2wU80xM",
+                    mumzworld: "https://www.firstcry.ae/babybuddha/babybuddha-portable-breast-pump-compact-with-15-levels-of-control-battery-powered-quiet-single-double-wearable-breast-pump-for-new-moms-140ml-each/1605eae005704/product-detail",
+                    retailerName: "FirstCry",
+                    retailer: "firstcry"
+                },
+                {
+                    rank: 5,
+                    name: "Medela Harmony Manual Breast Pump",
+                    description: "A single manual breast pump, perfect for mums who express occasionally and need a lightweight travel companion.",
+                    amazon: "https://amzn.to/4e9AC7T",
+                    noon: "https://s.noon.com/TRLdgLPYAy0",
+                    mumzworld: "https://www.mumzworld.com/en/medela-harmony-flex-manual-breast-pump-203539-qcom?geo=false&srsltid=AfmBOorvsk891zF0roofG349uS_W4gQy_xXTegu4uCWtdG3pDUiGpoYqByg"
+                }
+            ],
+            'feeding-accessories': [
+                {
+                    rank: 1,
+                    name: "My Breast Friend Deluxe",
+                    description: "Babylist's top overall pick, especially for latch support.",
+                    amazon: "https://amzn.to/4vKGj2l",
+                    noon: "https://s.noon.com/vGfviV7pm_o",
+                    mumzworld: "https://www.mumzworld.com/en/my-brest-friend-super-deluxe-pillow-platinum?geo=false&srsltid=AfmBOoq_mm0R31ym5nxKJvlF0IsMTeNE-g8A3qK4TH1mDC34lUsfUW1gVs8"
+                },
+                {
+                    rank: 2,
+                    name: "Boppy Nursing Pillow",
+                    description: "The classic household-name option.",
+                    amazon: "https://amzn.to/4mVq3rd",
+                    noon: "https://s.noon.com/11R16ppPEOQ",
+                    mumzworld: ""
+                },
+                {
+                    rank: 3,
+                    name: "Frida Mom Adjustable Nursing Pillow",
+                    description: "Good if you want more adjustability.",
+                    amazon: "https://amzn.to/4sPgv2k",
+                    noon: "https://www.firstcry.ae/frida-mom/frida-mom-adjustable-nursing-pillow-customizable-breastfeeding-pillow-for-mom-and-baby-comfort-with-back-support-adjustable-wrap-around-waist-strap-0-months-64-77-x-20-32-x-35-56-cm-grey/69b6cae8fcb78/product-detail",
+                    noonName: "FIRSTCRY",
+                    mumzworld: ""
+                },
+                {
+                    rank: 4,
+                    name: "Snuggle Me Feeding Support",
+                    description: "Trendy aesthetic pick, especially gift-registry friendly.",
+                    amazon: "https://amzn.to/41Lx9F4",
+                    noon: "https://s.noon.com/YYfcRu9khgk",
+                    mumzworld: ""
+                }
+            ],
+            'feeding-burp': [
+                {
+                    rank: 1,
+                    name: "Burt's Bees Baby Burp Cloths",
+                    description: "Soft cotton, trusted baby-textile brand, registry favorite.",
+                    amazon: "https://amzn.to/3Qp9w2E",
+                    noon: "https://s.noon.com/snN6u1fxqzk",
+                    mumzworld: "https://www.desertcart.ae/products/6343267-burts-bees-baby-infant-burp-cloths-100-organic-cotton-extra",
+                    noonName: "NOON",
+                    retailerName: "DESERTCART",
+                    retailer: "desertcart"
+                },
+                {
+                    rank: 2,
+                    name: "Copper Pearl Burp Cloths",
+                    description: "Premium look, very popular gifting choice.",
+                    amazon: "https://amzn.to/3Qu67zy",
+                    noon: "https://s.noon.com/AlxPjETXyPk",
+                    mumzworld: ""
+                },
+                {
+                    rank: 3,
+                    name: "Parker Baby Co. Burp Cloths",
+                    description: "Frequently added to registries, good absorbency reputation.",
+                    amazon: "https://amzn.to/4cZ8Sl4",
+                    noon: "https://s.noon.com/8KCITP03BIc",
+                    mumzworld: ""
+                },
+                {
+                    rank: 4,
+                    name: "WeeSprout Organic Burp Cloths",
+                    description: "Practical, absorbent, value-driven.",
+                    amazon: "https://amzn.to/4crsnCP",
+                    noon: "https://s.noon.com/NfsQPQ8JEvw",
+                    mumzworld: ""
+                },
+                {
+                    rank: 5,
+                    name: "aden + anais Burpy Bibs",
+                    description: "Hybrid burp cloth/bib design keeps them relevant and trendy.",
+                    amazon: "https://amzn.to/4mKkZ8Z",
+                    noon: "https://s.noon.com/7r8V8qIjjJU",
+                    mumzworld: ""
+                }
+            ],
+            'diapering-newborn': [
+                {
+                    rank: 1,
+                    name: "Pampers Swaddlers Newborn",
+                    description: "The most repeatedly recommended newborn diaper for softness, absorbency, and easy availability.",
+                    amazon: "https://amzn.to/3QjVGyF",
+                    noon: "https://www.desertcart.ae/products/288743120-pampers-swaddlers-diapers-size-1-8-14-lbs-164-count",
+                    noonName: "DESERTCART",
+                    mumzworld: "https://www.ubuy.ae/en/product/1G101Y0-diapers-newborn-size-1-8-14-lb-164-count-pampers-swaddlers-disposable-baby-diapers-enormous-pack-packaging-may-vary",
+                    retailerName: "UBuy",
+                    retailer: "ubuy"
+                },
+                {
+                    rank: 2,
+                    name: "Huggies Little Snugglers",
+                    description: "Consistent runner-up for gentle feel and strong absorption, especially for newborn use.",
+                    amazon: "https://amzn.to/4tpIdDS",
+                    noon: "https://s.noon.com/f70oqS3jaT8",
+                    mumzworld: "https://www.desertcart.ae/products/699354174-huggies-size-1-diapers-little-snugglers-diapers-size-1-8",
+                    retailerName: "Desertcart",
+                    retailer: "desertcart"
+                },
+                {
+                    rank: 3,
+                    name: "Pureborn",
+                    description: "A preferred eco-friendly brand, often highlighted for being gentle on sensitive skin.",
+                    amazon: "https://amzn.to/4cLjcMq",
+                    noon: "https://s.noon.com/WZ3OSsjrUzQ",
+                    mumzworld: "https://www.firstcry.ae/pureborn/pureborn-organic-bamboo-baby-tape-style-diapers-size-1-upto-5-kg-68-pieces-assorted/fa7b1aeba2503/product-detail",
+                    retailerName: "FirstCry",
+                    retailer: "firstcry"
+                },
+                {
+                    rank: 4,
+                    name: "Rascals Premium",
+                    description: "A newer favorite in the market that emphasizes \"6 Core Innovations\" for performance. It is dermatologically tested, hypoallergenic, and free from lotions or fragrances, making it ideal for sensitive skin.",
+                    amazon: "https://amzn.to/4e6E0QW",
+                    noon: "https://s.noon.com/QQGz7221JVg",
+                    mumzworld: "https://www.firstcry.ae/rascals-premium/rascals-tape-style-premium-diaper-nappies-with-fastest-absorption-by-hydrolock-core-with-triple-leak-guard-and-wetness-indicator-size-1-newborn-54-pieces/c2fe8ae33e5d0/product-detail",
+                    retailerName: "FirstCry",
+                    retailer: "firstcry"
+                },
+                {
+                    rank: 5,
+                    name: "BabyJoy",
+                    description: "A major local favorite known for its Compressed Diamond Pad, which prevents bulkiness even when wet. Parents in UAE forums often praise it for having no night leaks and being excellent value for money.",
+                    amazon: "https://amzn.to/4cDOFS1",
+                    noon: "https://s.noon.com/2tzm-qO5748",
+                    mumzworld: "https://www.firstcry.ae/babyjoy/babyjoy-compressed-diamond-pad-tape-style-diapers-84-pieces-mega-pack-size-1-newborn-0-to-4kg-12hrs-leakage-protection-cottony-soft-waist-stretch-breathable/a2116aed0f6d8/product-detail",
+                    retailerName: "FirstCry",
+                    retailer: "firstcry"
+                }
+            ],
+            'diapering-wipes': [
+                {
+                    rank: 1,
+                    name: "Mustela Bio Organic Baby Wipes",
+                    description: "A high-end choice known for using 99% ingredient of natural origin. They are certified organic and have a long history of dermatological safety in the UAE.",
+                    amazon: "https://amzn.to/4cJImLl",
+                    noon: "https://s.noon.com/5ZCN-xd1Wnw",
+                    mumzworld: ""
+                },
+                {
+                    rank: 2,
+                    name: "BabyJoy Sensitive Wipes",
+                    description: "Extremely popular in the UAE for being 97% pure water and free from the preservatives currently being litigated in other brands.",
+                    amazon: "https://amzn.to/4u8n4Ox",
+                    noon: "https://s.noon.com/bU7cQDX-uxM",
+                    mumzworld: ""
+                },
+                {
+                    rank: 3,
+                    name: "Pigeon Baby Water Wipes",
+                    description: "Made with 99% pure water and specifically designed for newborns. Pigeon is a trusted Japanese brand with a very strong safety reputation in the Middle East.",
+                    amazon: "https://amzn.to/4sRyRzA",
+                    noon: "https://s.noon.com/4-10asfsdwA",
+                    mumzworld: ""
+                },
+                {
+                    rank: 4,
+                    name: "PureBorn Eco-Wipes",
+                    description: "A homegrown UAE brand focusing on organic bamboo and ultra-pure water. They have avoided the \"microplastic\" lawsuits currently affecting competitors by using 100% biodegradable bamboo fibers.",
+                    amazon: "https://amzn.to/3OVvF8i",
+                    noon: "https://s.noon.com/e-mbBSzBUyg",
+                    mumzworld: ""
+                },
+                {
+                    rank: 5,
+                    name: "Alokozay 99% Water Wipes",
+                    description: "A local UAE alternative that is dermatologically tested, pH-balanced, and free from alcohol, parabens, and dyes.",
+                    amazon: "https://amzn.to/4mN6yBd",
+                    noon: "https://s.noon.com/g33Vp7IP8DE",
+                    mumzworld: ""
+                },
+                {
+                    rank: 6,
+                    name: "Fine Baby Aqua Wipes",
+                    description: "Highly rated for being 99.9% pure water with zero chemical fragrances or alcohol.",
+                    amazon: "https://amzn.to/4urswfN",
+                    noon: "https://s.noon.com/cit6LGTOcrk",
+                    mumzworld: ""
+                }
+            ],
+            'diapering-rash': [
+                {
+                    rank: 1,
+                    name: "Bepanthen",
+                    description: "Newborns & Every Change: Ideal for very sensitive skin and preventing chafing from the start.",
+                    amazon: "https://amzn.to/4sTaYYI",
+                    noon: "https://s.noon.com/X8-J6b-p4cg",
+                    mumzworld: ""
+                },
+                {
+                    rank: 2,
+                    name: "Weleda",
+                    description: "Eco-Conscious / Redness: Best when you see slight irritation and want a plant-based solution.",
+                    amazon: "https://amzn.to/3OAqrPh",
+                    noon: "https://s.noon.com/uOWbd3qSE0c",
+                    mumzworld: ""
+                },
+                {
+                    rank: 3,
+                    name: "Sebamed",
+                    description: "Sensitive / Fragile Skin: Best for maintaining the natural skin barrier in dry or hot UAE weather.",
+                    amazon: "https://amzn.to/3OKILFf",
+                    noon: "https://s.noon.com/uK2ZImNkOFE",
+                    mumzworld: ""
+                },
+                {
+                    rank: 4,
+                    name: "Sudocrem",
+                    description: "Treatment for Flare-ups: Use when a visible red rash appears; it creates a \"waterproof\" seal.",
+                    amazon: "https://amzn.to/4vNpfIP",
+                    noon: "https://s.noon.com/lA7hrKdjWOc",
+                    mumzworld: ""
+                },
+                {
+                    rank: 5,
+                    name: "Mustela 123",
+                    description: "The All-Rounder: Good for travel or daycare; it prevents, soothes, and recovers in one go.",
+                    amazon: "https://amzn.to/4eCZfd5",
+                    noon: "https://s.noon.com/ogEaTPv9Q9c",
+                    mumzworld: ""
+                }
+            ],
+            'diapering-mats': [
+                {
+                    rank: 1,
+                    name: "Shnuggle Squishy",
+                    description: "Premium, soft PU foam pad with a gentle incline to soothe colic and reflux. It is warm-to-touch and features high sides to prevent rolling.",
+                    amazon: "https://amzn.to/3Qv6ytp",
+                    noon: "https://s.noon.com/QscoLtstwys",
+                    shnuggle: "https://shnuggle.me/products/shnuggle-squishy-changing-mat?variant=41081669877850&country=AE&currency=AED&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOopP1SRqe6yJvkU_XgpjfKZRRI4ukn1l-J5-iUAzFQNTtCk-l0J6Bqg"
+                },
+                {
+                    rank: 2,
+                    name: "Skip Hop Wipe Clean",
+                    description: "Features a non-skid base with a tabletop attachment and a tuck-away toy bar with a mirror to keep babies entertained during changes.",
+                    amazon: "https://amzn.to/4uaCGBe",
+                    noon: "",
+                    firstcry: "https://www.firstcry.ae/skip-hop/skip-hop-nursery-style-wipe-clean-changing-pad-contoured-design-with-toy-bar-safety-belt-80-x-46-x-6cm-0-months-oat/cc7ddae899bc3/product-detail?ref=!!!SEM_GSN_Std_Shopping_Others!!!&gad_source=4&gad_campaignid=7687139165&gbraid=0AAAAACv9CAdrSB0gby3-PFSbvH3ud-CKQ&gclid=CjwKCAjwqazPBhALEiwAOuXqdFx6e9DqLyur-CoPBIE-8RikrO8zAO-_S8OTTLE6TPYqMGnd22v7xBoCQEAQAvD_BwE",
+                    mumzworld: "https://www.mumzworld.com/en/skip-hop-nursery-style-wipe-clean-changing-pad-contoured-design-with-toy-bar-beige?source=Category+Page"
+                },
+                {
+                    rank: 3,
+                    name: "Babyhood Ultimate",
+                    description: "A flat, high-density PU foam pad designed without belts or ties to avoid strangulation hazards. Its high-rise sides help contain messes and \"poo explosions\".",
+                    amazon: "https://amzn.to/4eHqjYF",
+                    desertcart: "https://www.desertcart.ae/products/806442842-baby-changing-pad-with-waterproof-and-non-toxic-surface-changing",
+                    babyhood: "https://www.desertcart.ae/products/806442842-baby-changing-pad-with-waterproof-and-non-toxic-surface-changing"
+                },
+                {
+                    rank: 4,
+                    name: "IKEA VÄDRA",
+                    description: "A simple, water-resistant mat with three raised edges to reduce fall risks. It is made of harmless, easy-to-wipe plastic.",
+                    amazon: "https://amazon.ae/s?k=IKEA+VADRA+Changing+Mat",
+                    ikea: "https://www.ikea.com/ae/en/p/vaedra-babycare-mat-80226137/?gad_source=4&gad_campaignid=20876863341&gbraid=0AAAAAC7LBpuRu5pWIfoF5BaC5nQchIEi3&gclid=CjwKCAjwqazPBhALEiwAOuXqdMJWwCmhmx06_RFIJMxprSq6FP6_eFS8WuaDUxiKX7Z9f60CEuV-oxoCLpQQAvD_BwE"
+                },
+                {
+                    rank: 5,
+                    name: "Munchkin Secure Grip",
+                    description: "A traditional contoured pad with an extra-grip base and safety straps to secure wiggly babies to changing tables or dressers.",
+                    amazon: "https://amazon.ae/s?k=Munchkin+Secure+Grip+Changing+Pad",
+                    noon: "https://noon.com/uae/en/search?q=Munchkin+Secure+Grip",
+                    mumzworld: ""
+                }
+            ],
+            'diapering-bags': [
+                {
+                    rank: 1,
+                    name: "RUVALINO Baby Bag Backpack",
+                    description: "Two large compartments and nine pockets—everything has its place. Say goodbye to chaos.",
+                    amazon: "https://amazon.ae/s?k=RUVALINO+Diaper+Bag",
+                    noon: "https://noon.com/uae/en/search?q=RUVALINO+Bag",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=RUVALINO"
+                },
+                {
+                    rank: 2,
+                    name: "Petunia Pickle Bottom Backpack",
+                    description: "Stylish, durable, and doesn't look like a typical diaper bag.",
+                    amazon: "https://amazon.ae/s?k=Petunia+Pickle+Bottom+Bag",
+                    noon: "https://noon.com/uae/en/search?q=Petunia+Pickle+Bag",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=Petunia"
+                }
+            ],
+            'diapering-disposal': [
+                {
+                    rank: 1,
+                    name: "Diaper Genie Elite Pail",
+                    description: "Odor control that actually works. Makes diaper disposal quick and hygienic.",
+                    amazon: "https://amazon.ae/s?k=Diaper+Genie+Elite",
+                    noon: "https://noon.com/uae/en/search?q=Diaper+Genie",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=Diaper+Genie"
+                },
+                {
+                    rank: 2,
+                    name: "Munchkin Arm & Hammer Diaper Pail",
+                    description: "Budget-friendly odor control using baking soda technology.",
+                    amazon: "https://amazon.ae/s?k=Munchkin+Diaper+Pail",
+                    noon: "https://noon.com/uae/en/search?q=Munchkin+Pail",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=Munchkin+Pail"
+                }
+            ],
+            'clothing-bodysuits': [
+                {
+                    rank: 1,
+                    name: "Carter's Short-Sleeve Bodysuits",
+                    description: "Soft, durable, and affordable. Essential basics for every newborn.",
+                    amazon: "https://amazon.ae/s?k=Carters+Bodysuits",
+                    noon: "https://noon.com/uae/en/search?q=Carters+Bodysuits",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=Carters"
+                },
+                {
+                    rank: 2,
+                    name: "Gerber Organic Cotton Bodysuits",
+                    description: "Soft organic cotton that's gentle on sensitive newborn skin.",
+                    amazon: "https://amazon.ae/s?k=Gerber+Bodysuits",
+                    noon: "https://noon.com/uae/en/search?q=Gerber+Bodysuits",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=Gerber"
+                }
+            ],
+            'clothing-sleepwear': [
+                {
+                    rank: 1,
+                    name: "Love to Dream Swaddle UP",
+                    description: "Innovative design that prevents startle reflex. Babies sleep longer and more comfortably.",
+                    amazon: "https://amazon.ae/s?k=Love+to+Dream+Swaddle",
+                    noon: "https://noon.com/uae/en/search?q=Love+Dream+Swaddle",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=Love+Dream"
+                },
+                {
+                    rank: 2,
+                    name: "Halo SleepSack Wearable Blanket",
+                    description: "Safe alternative to blankets. Keeps baby warm without overheating risk.",
+                    amazon: "https://amazon.ae/s?k=Halo+SleepSack",
+                    noon: "https://noon.com/uae/en/search?q=Halo+SleepSack",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=Halo"
+                }
+            ],
+            'clothing-outfits': [
+                {
+                    rank: 1,
+                    name: "Mori Organic Cotton Going Home Outfit",
+                    description: "Beautiful, soft, and special for that first photo. Worth the splurge.",
+                    amazon: "https://amazon.ae/s?k=Mori+Going+Home+Outfit",
+                    noon: "https://noon.com/uae/en/search?q=Mori+Outfit",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=Mori"
+                },
+                {
+                    rank: 2,
+                    name: "Gap Baby Everyday Outfits",
+                    description: "Cute, comfortable, and easy to find in most stores.",
+                    amazon: "https://amazon.ae/s?k=Gap+Baby+Outfits",
+                    noon: "https://noon.com/uae/en/search?q=Gap+Baby+Outfits",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=Gap+Baby"
+                }
+            ],
+            'clothing-accessories': [
+                {
+                    rank: 1,
+                    name: "Mittens to Prevent Scratching",
+                    description: "Soft cotton mittens that protect baby's face from accidental scratches.",
+                    amazon: "https://amazon.ae/s?k=Baby+Mittens+Soft",
+                    noon: "https://noon.com/uae/en/search?q=Baby+Mittens",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=Baby+Mittens"
+                },
+                {
+                    rank: 2,
+                    name: "Newborn Hats & Mittens Set",
+                    description: "Complete set for hospital bag. Essential for temperature regulation.",
+                    amazon: "https://amazon.ae/s?k=Newborn+Hat+Mittens+Set",
+                    noon: "https://noon.com/uae/en/search?q=Baby+Hat+Set",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=Baby+Hat"
+                }
+            ],
+            'sleep-beds': [
+                {
+                    rank: 1,
+                    name: "Maxi-Cosi Iora Air Co-Sleeper",
+                    description: "Yes, it's pricey, but if you value sleep quality, this bassinet is worth every penny.",
+                    amazon: "https://amazon.ae/s?k=Maxi+Cosi+Iora",
+                    noon: "https://noon.com/uae/en/search?q=Maxi+Cosi+Iora",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=Maxi+Cosi"
+                },
+                {
+                    rank: 2,
+                    name: "Chicco Next2Me Side Sleeper Crib",
+                    description: "Attaches safely to your bed—keeps baby close while maintaining safe sleep space.",
+                    amazon: "https://amazon.ae/s?k=Chicco+Next2Me",
+                    noon: "https://noon.com/uae/en/search?q=Chicco+Next2Me",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=Chicco"
+                }
+            ],
+            'sleep-mattresses': [
+                {
+                    rank: 1,
+                    name: "Newton Baby Crib Mattress",
+                    description: "Breathable, hypoallergenic, and designed for safe sleep. Parents trust this brand.",
+                    amazon: "https://amazon.ae/s?k=Newton+Baby+Mattress",
+                    noon: "https://noon.com/uae/en/search?q=Newton+Mattress",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=Newton"
+                },
+                {
+                    rank: 2,
+                    name: "Sealy Infant/Toddler Crib Mattress",
+                    description: "Firm support, affordable, and meets all safety standards.",
+                    amazon: "https://amazon.ae/s?k=Sealy+Crib+Mattress",
+                    noon: "https://noon.com/uae/en/search?q=Sealy+Mattress",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=Sealy"
+                }
+            ],
+            'sleep-bedding': [
+                {
+                    rank: 1,
+                    name: "Snuz SnuzPod Fitted Sheets",
+                    description: "Perfect fit, soft cotton, and easy to change frequently.",
+                    amazon: "https://amazon.ae/s?k=Snuz+Fitted+Sheets",
+                    noon: "https://noon.com/uae/en/search?q=Snuz+Sheets",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=Snuz"
+                },
+                {
+                    rank: 2,
+                    name: "aden + anais Crib Sheets",
+                    description: "Soft muslin, beautiful designs, and very durable through many washes.",
+                    amazon: "https://amazon.ae/s?k=aden+anais+Sheets",
+                    noon: "https://noon.com/uae/en/search?q=aden+anais+Sheets",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=aden+anais"
+                }
+            ],
+            'sleep-swaddles': [
+                {
+                    rank: 1,
+                    name: "aden + anais Muslin Swaddle Blankets",
+                    description: "The benchmark for muslin cloths. Soft, large, and versatile for a hundred uses.",
+                    amazon: "https://amazon.ae/s?k=aden+anais+Swaddles",
+                    noon: "https://noon.com/uae/en/search?q=aden+anais+Swaddle",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=aden+anais+Swaddle"
+                },
+                {
+                    rank: 2,
+                    name: "Little Unicorn Cotton Muslin Swaddles",
+                    description: "Soft, large, and very giftable. Parents love these for layering.",
+                    amazon: "https://amazon.ae/s?k=Little+Unicorn+Swaddles",
+                    noon: "https://noon.com/uae/en/search?q=Little+Unicorn+Swaddle",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=Little+Unicorn"
+                }
+            ],
+            'sleep-monitors': [
+                {
+                    rank: 1,
+                    name: "Owlet Smart Sock",
+                    description: "Peace of mind with oxygen and heart rate monitoring. Parents swear by it.",
+                    amazon: "https://amazon.ae/s?k=Owlet+Smart+Sock",
+                    noon: "https://noon.com/uae/en/search?q=Owlet+Sock",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=Owlet"
+                },
+                {
+                    rank: 2,
+                    name: "Infant Optics DXi-8 Monitor",
+                    description: "Closed system without WiFi, for parents who prefer local monitoring.",
+                    amazon: "https://amazon.ae/s?k=Infant+Optics+DXi8",
+                    noon: "https://noon.com/uae/en/search?q=Infant+Optics",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=Infant+Optics"
+                }
+            ],
+            'bathing-tubs': [
+                {
+                    rank: 1,
+                    name: "Skip Hop Moby Smart Spout Bath Tub",
+                    description: "Grows with your baby from newborn to toddler. Smart design saves space.",
+                    amazon: "https://amazon.ae/s?k=Skip+Hop+Moby+Tub",
+                    noon: "https://noon.com/uae/en/search?q=Skip+Hop+Moby",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=Skip+Hop+Moby"
+                },
+                {
+                    rank: 2,
+                    name: "Munchkin White Hot Plastic Bath Tub",
+                    description: "Temperature-sensitive dots indicate water safety. Budget-friendly option.",
+                    amazon: "https://amazon.ae/s?k=Munchkin+White+Hot+Tub",
+                    noon: "https://noon.com/uae/en/search?q=Munchkin+Tub",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=Munchkin+Tub"
+                }
+            ],
+            'bathing-products': [
+                {
+                    rank: 1,
+                    name: "Mustela Gentle Baby Cleansing Gel",
+                    description: "Hypoallergenic, tear-free, and trusted by pediatricians for sensitive skin.",
+                    amazon: "https://amazon.ae/s?k=Mustela+Cleansing+Gel",
+                    noon: "https://noon.com/uae/en/search?q=Mustela+Gel",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=Mustela"
+                },
+                {
+                    rank: 2,
+                    name: "Cetaphil Pro Baby Wash",
+                    description: "Dermatologist-recommended for delicate newborn skin.",
+                    amazon: "https://amazon.ae/s?k=Cetaphil+Baby+Wash",
+                    noon: "https://noon.com/uae/en/search?q=Cetaphil+Wash",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=Cetaphil"
+                }
+            ],
+            'bathing-tools': [
+                {
+                    rank: 1,
+                    name: "Brush and Comb Set for Newborns",
+                    description: "Soft, delicate tools for grooming without irritating baby's scalp.",
+                    amazon: "https://amazon.ae/s?k=Baby+Brush+Comb+Set",
+                    noon: "https://noon.com/uae/en/search?q=Baby+Brush+Set",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=Baby+Brush"
+                },
+                {
+                    rank: 2,
+                    name: "Pigeon Baby Nail Clippers",
+                    description: "Safety guards and precise cutting. Makes trimming baby nails less scary.",
+                    amazon: "https://amazon.ae/s?k=Pigeon+Nail+Clippers",
+                    noon: "https://noon.com/uae/en/search?q=Pigeon+Clippers",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=Pigeon"
+                }
+            ],
+            'health-monitoring': [
+                {
+                    rank: 1,
+                    name: "Braun ThermoScan 7 Digital Thermometer",
+                    description: "Accurate ear thermometer that's quick and trusted by parents.",
+                    amazon: "https://amazon.ae/s?k=Braun+ThermoScan+7",
+                    noon: "https://noon.com/uae/en/search?q=Braun+Thermometer",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=Braun"
+                },
+                {
+                    rank: 2,
+                    name: "Kinsa Smart Thermometer",
+                    description: "Digital reading with app tracking for peace of mind during illness.",
+                    amazon: "https://amazon.ae/s?k=Kinsa+Smart+Thermometer",
+                    noon: "https://noon.com/uae/en/search?q=Kinsa+Thermometer",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=Kinsa"
+                }
+            ],
+            'health-care': [
+                {
+                    rank: 1,
+                    name: "Mommys Helper Nasal Aspirator",
+                    description: "Gentle suction removes nasal congestion. Essential for stuffy newborns.",
+                    amazon: "https://amazon.ae/s?k=Mommys+Helper+Aspirator",
+                    noon: "https://noon.com/uae/en/search?q=Nasal+Aspirator",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=Nasal+Aspirator"
+                },
+                {
+                    rank: 2,
+                    name: "NoseFrida Snotsucker",
+                    description: "Popular among parents for effective and safe nasal clearing.",
+                    amazon: "https://amazon.ae/s?k=NoseFrida+Snotsucker",
+                    noon: "https://noon.com/uae/en/search?q=NoseFrida",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=NoseFrida"
+                }
+            ],
+            'health-cleaning': [
+                {
+                    rank: 1,
+                    name: "Dreft Baby Laundry Detergent",
+                    description: "Hypoallergenic, gentle on baby's delicate skin and clothes.",
+                    amazon: "https://amazon.ae/s?k=Dreft+Baby+Detergent",
+                    noon: "https://noon.com/uae/en/search?q=Dreft+Detergent",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=Dreft"
+                },
+                {
+                    rank: 2,
+                    name: "All Free Clear Baby Laundry Detergent",
+                    description: "Free from dyes and perfumes. Safe for sensitive newborn skin.",
+                    amazon: "https://amazon.ae/s?k=All+Free+Clear+Baby",
+                    noon: "https://noon.com/uae/en/search?q=All+Free+Detergent",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=All+Free"
+                }
+            ],
+            'travel-seats': [
+                {
+                    rank: 1,
+                    name: "Graco 4Ever All-in-One Car Seat",
+                    description: "Grows from infant through booster phase. Safe, certified, and widely trusted.",
+                    amazon: "https://amazon.ae/s?k=Graco+4Ever+Car+Seat",
+                    noon: "https://noon.com/uae/en/search?q=Graco+4Ever",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=Graco"
+                },
+                {
+                    rank: 2,
+                    name: "Chicco KeyFit 35 Infant Car Seat",
+                    description: "Lightweight, easy to install, and compatible with most stroller bases.",
+                    amazon: "https://amazon.ae/s?k=Chicco+KeyFit+35",
+                    noon: "https://noon.com/uae/en/search?q=Chicco+KeyFit",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=Chicco+KeyFit"
+                }
+            ],
+            'travel-strollers': [
+                {
+                    rank: 1,
+                    name: "UPPAbaby Cruz Stroller",
+                    description: "Smooth ride, easy maneuverability, and great for city living.",
+                    amazon: "https://amazon.ae/s?k=UPPAbaby+Cruz",
+                    noon: "https://noon.com/uae/en/search?q=UPPAbaby+Cruz",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=UPPAbaby"
+                },
+                {
+                    rank: 2,
+                    name: "Bugaboo Bee5 Lightweight Stroller",
+                    description: "Compact, maneuverable, and stylish. Perfect for apartment living.",
+                    amazon: "https://amazon.ae/s?k=Bugaboo+Bee5",
+                    noon: "https://noon.com/uae/en/search?q=Bugaboo+Bee",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=Bugaboo"
+                }
+            ],
+            'travel-carriers': [
+                {
+                    rank: 1,
+                    name: "Ergobaby Omni 360 Baby Carrier",
+                    description: "Ergonomic support for parent and baby. Works from newborn through toddler.",
+                    amazon: "https://amazon.ae/s?k=Ergobaby+Omni+360",
+                    noon: "https://noon.com/uae/en/search?q=Ergobaby+Omni",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=Ergobaby"
+                },
+                {
+                    rank: 2,
+                    name: "Solly Wrap Baby Carrier",
+                    description: "Soft structured wrap perfect for bonding and keeping hands free.",
+                    amazon: "https://amazon.ae/s?k=Solly+Wrap",
+                    noon: "https://noon.com/uae/en/search?q=Solly+Wrap",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=Solly"
+                }
+            ],
+            'travel-accessories': [
+                {
+                    rank: 1,
+                    name: "JL Childress Car Seat Cover",
+                    description: "Protects car seats from weather and spills. Easy installation.",
+                    amazon: "https://amazon.ae/s?k=JL+Childress+Car+Seat+Cover",
+                    noon: "https://noon.com/uae/en/search?q=Car+Seat+Cover",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=Car+Seat+Cover"
+                },
+                {
+                    rank: 2,
+                    name: "Skip Hop Portable Changing Pouch",
+                    description: "Organized compartments keep everything accessible during outings.",
+                    amazon: "https://amazon.ae/s?k=Skip+Hop+Changing+Pouch",
+                    noon: "https://noon.com/uae/en/search?q=Changing+Pouch",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=Changing+Pouch"
+                }
+            ],
+            'nursery-furniture': [
+                {
+                    rank: 1,
+                    name: "Babyletto Hudson Crib",
+                    description: "Mid-century modern design, safe, and grows with your baby.",
+                    amazon: "https://amazon.ae/s?k=Babyletto+Hudson+Crib",
+                    noon: "https://noon.com/uae/en/search?q=Babyletto+Crib",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=Babyletto"
+                },
+                {
+                    rank: 2,
+                    name: "Glider Chair for Nursery",
+                    description: "Comfortable for late-night feeds and soothing sessions.",
+                    amazon: "https://amazon.ae/s?k=Glider+Chair+Nursery",
+                    noon: "https://noon.com/uae/en/search?q=Glider+Chair",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=Glider+Chair"
+                }
+            ],
+            'nursery-decor': [
+                {
+                    rank: 1,
+                    name: "Hatch Rest Sound Machine & Light",
+                    description: "Smart light and sound machine. Perfect for sleep routines and nighttime.",
+                    amazon: "https://amazon.ae/s?k=Hatch+Rest+Light",
+                    noon: "https://noon.com/uae/en/search?q=Hatch+Rest",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=Hatch"
+                },
+                {
+                    rank: 2,
+                    name: "Blackout Curtains for Nursery",
+                    description: "Blocks light for better daytime naps and safer sleep environment.",
+                    amazon: "https://amazon.ae/s?k=Blackout+Curtains+Baby",
+                    noon: "https://noon.com/uae/en/search?q=Blackout+Curtains",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=Blackout+Curtains"
+                }
+            ],
+            'nursery-equipment': [
+                {
+                    rank: 1,
+                    name: "Fisher-Price Newborn Bassinet",
+                    description: "Gentle rocking and white noise. Helps babies settle and sleep.",
+                    amazon: "https://amazon.ae/s?k=Fisher+Price+Bassinet",
+                    noon: "https://noon.com/uae/en/search?q=Fisher+Price+Bassinet",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=Fisher+Price"
+                },
+                {
+                    rank: 2,
+                    name: "Play Mat for Tummy Time",
+                    description: "Padded, colorful, and safe for floor play during the newborn phase.",
+                    amazon: "https://amazon.ae/s?k=Baby+Play+Mat",
+                    noon: "https://noon.com/uae/en/search?q=Play+Mat+Baby",
+                    mumzworld: "https://mumzworld.com/en-ae/search?query=Play+Mat"
+                }
+            ]
+        };
+
+        // RENDER PRODUCTS
+        function renderProducts(subcategoryId, products) {
+            const container = document.getElementById(subcategoryId);
+            container.innerHTML = '<div class="product-grid"></div>';
+            const grid = container.querySelector('.product-grid');
+
+            products.forEach((product, index) => {
+                setTimeout(() => {
+                    const card = document.createElement('div');
+                    card.className = 'product-card';
+                    card.innerHTML = `
+                        <div class="product-rank">#${product.rank}</div>
+                        <h3 class="product-name">${product.name}</h3>
+                        <p class="product-description">${product.description}</p>
+                        <div class="affiliate-links">
+                            <a href="${product.amazon}" target="_blank" rel="noopener noreferrer" class="affiliate-link" onclick="window.open('${product.amazon}', '_blank'); return false;">
+                                <span class="affiliate-link-label">
+                                    <span class="affiliate-link-icon amazon"></span> AMAZON
+                                </span>
+                                <span class="affiliate-link-arrow">→</span>
+                            </a>
+                            ${product.noon ? `
+                            <a href="${product.noon}" target="_blank" rel="noopener noreferrer" class="affiliate-link" onclick="window.open('${product.noon}', '_blank'); return false;">
+                                <span class="affiliate-link-label">
+                                    <span class="affiliate-link-icon noon"></span> ${product.noonName || 'NOON'}
+                                </span>
+                                <span class="affiliate-link-arrow">→</span>
+                            </a>
+                            ` : ''}
+                            ${product.shnuggle ? `
+                            <a href="${product.shnuggle}" target="_blank" rel="noopener noreferrer" class="affiliate-link" onclick="window.open('${product.shnuggle}', '_blank'); return false;">
+                                <span class="affiliate-link-label">
+                                    <span class="affiliate-link-icon shnuggle"></span> SHNUGGLE
+                                </span>
+                                <span class="affiliate-link-arrow">→</span>
+                            </a>
+                            ` : ''}
+                            ${product.firstcry ? `
+                            <a href="${product.firstcry}" target="_blank" rel="noopener noreferrer" class="affiliate-link" onclick="window.open('${product.firstcry}', '_blank'); return false;">
+                                <span class="affiliate-link-label">
+                                    <span class="affiliate-link-icon firstcry"></span> FIRSTCRY
+                                </span>
+                                <span class="affiliate-link-arrow">→</span>
+                            </a>
+                            ` : ''}
+                            ${product.desertcart ? `
+                            <a href="${product.desertcart}" target="_blank" rel="noopener noreferrer" class="affiliate-link" onclick="window.open('${product.desertcart}', '_blank'); return false;">
+                                <span class="affiliate-link-label">
+                                    <span class="affiliate-link-icon desertcart"></span> DESERTCART
+                                </span>
+                                <span class="affiliate-link-arrow">→</span>
+                            </a>
+                            ` : ''}
+                            ${product.babyhood ? `
+                            <a href="${product.babyhood}" target="_blank" rel="noopener noreferrer" class="affiliate-link" onclick="window.open('${product.babyhood}', '_blank'); return false;">
+                                <span class="affiliate-link-label">
+                                    <span class="affiliate-link-icon babyhood"></span> BABYHOOD
+                                </span>
+                                <span class="affiliate-link-arrow">→</span>
+                            </a>
+                            ` : ''}
+                            ${product.ikea ? `
+                            <a href="${product.ikea}" target="_blank" rel="noopener noreferrer" class="affiliate-link" onclick="window.open('${product.ikea}', '_blank'); return false;">
+                                <span class="affiliate-link-label">
+                                    <span class="affiliate-link-icon ikea"></span> IKEA
+                                </span>
+                                <span class="affiliate-link-arrow">→</span>
+                            </a>
+                            ` : ''}
+                            ${product.mumzworld ? `
+                            <a href="${product.mumzworld}" target="_blank" rel="noopener noreferrer" class="affiliate-link" onclick="window.open('${product.mumzworld}', '_blank'); return false;">
+                                <span class="affiliate-link-label">
+                                    <span class="affiliate-link-icon ${product.retailer || 'mumzworld'}"></span> ${product.retailerName || 'MUMZWORLD'}
+                                </span>
+                                <span class="affiliate-link-arrow">→</span>
+                            </a>
+                            ` : ''}
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                }, index * 80);
+            });
+        }
+
+        // SWITCH CATEGORY
+        function switchCategory(categoryId, button) {
+            // Hide all sections
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show selected section
+            document.getElementById(categoryId).classList.add('active');
+
+            // Update button styles
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            if (button && button.classList) {
+                button.classList.add('active');
+            } else {
+                document.querySelector(`[onclick*="${categoryId}"]`).classList.add('active');
+            }
+
+            // Load subcategory content
+            const subcategoryTabs = document.querySelectorAll('.page-section.active .subcategory-tab');
+            if (subcategoryTabs.length > 0) {
+                const firstSubcategory = subcategoryTabs[0].getAttribute('onclick').match(/'([^']+)'/)[1];
+                switchSubcategory(firstSubcategory, subcategoryTabs[0]);
+            }
+        }
+
+        // SWITCH SUBCATEGORY
+        function switchSubcategory(subcategoryId, button) {
+            // Hide all subcategory content
+            document.querySelectorAll('.page-section.active .subcategory-content').forEach(content => {
+                content.style.display = 'none';
+            });
+
+            // Show selected subcategory
+            const container = document.getElementById(subcategoryId);
+            if (container) {
+                container.style.display = 'block';
+
+                // Render products if not already rendered
+                if (container.querySelector('.product-grid') === null || container.querySelector('.product-grid').children.length === 0) {
+                    if (products[subcategoryId]) {
+                        renderProducts(subcategoryId, products[subcategoryId]);
+                    }
+                }
+
+                // Add comparison summary for Changing Mats only (check if already exists in parent)
+                if (subcategoryId === 'diapering-mats') {
+                    // Comparison table removed - no longer needed for Changing Mats
+                }
+
+                // Add comparison summary for Diaper Rash Cream only (check if already exists in parent)
+                if (subcategoryId === 'diapering-rash') {
+                    const parent = container.parentElement;
+                    const existingComparison = parent.querySelector('.comparison-summary');
+                    if (!existingComparison) {
+                        const comparisonHtml = `
+                            <div class="comparison-summary" style="margin-top: 3rem;">
+                                <h3 style="font-size: 1.2rem; margin-bottom: 1rem;">Comparison Summary for UAE Shopping</h3>
+                                <table class="comparison-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Brand</th>
+                                            <th>Best For</th>
+                                            <th>Description</th>
+                                            <th>Price Range (AED)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>#1 Bepanthen</strong></td>
+                                            <td>Newborns</td>
+                                            <td>Breathable ointment with Pro-Vitamin B5. Ideal for daily protection of very sensitive skin.</td>
+                                            <td>17 - 45 (30g - 100g)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>#2 Weleda</strong></td>
+                                            <td>Eco-Conscious</td>
+                                            <td>100% natural, plant-based Calendula cream. Best for soothing mild redness and inflammation.</td>
+                                            <td>45 - 70 (75ml)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>#3 Sebamed</strong></td>
+                                            <td>Sensitive Skin</td>
+                                            <td>Uses a pH 5.5 formula to strengthen the skin's barrier. Highly recommended for dry or humid UAE weather.</td>
+                                            <td>15 - 49 (100ml - 200ml)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>#4 Sudocrem</strong></td>
+                                            <td>Flare-ups</td>
+                                            <td>A thick antiseptic healing cream that forms a waterproof seal. Best for treating active, visible rashes.</td>
+                                            <td>16 - 28 (60g - 250g)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>#5 Mustela 123</strong></td>
+                                            <td>The All-Rounder</td>
+                                            <td>A "3-in-1" barrier cream that prevents, soothes, and recovers. Great for travel and daycare bags.</td>
+                                            <td>30 - 62 (50ml - 100ml)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        `;
+                        container.insertAdjacentHTML('afterend', comparisonHtml);
+                    }
+                }
+            }
+
+            // Update tab styles
+            document.querySelectorAll('.page-section.active .subcategory-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            if (button && button.classList) {
+                button.classList.add('active');
+            }
+        }
+
+        // HOME
+        function goHome() {
+            switchCategory('feeding', null);
+        }
+
+        // INITIALIZE ON LOAD
+        document.addEventListener('DOMContentLoaded', () => {
+            // Render feeding bottles on initial load
+            renderProducts('feeding-bottles', products['feeding-bottles']);
+        });
+    </script>
+</body>
+</html>
