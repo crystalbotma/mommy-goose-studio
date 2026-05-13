@@ -643,6 +643,208 @@
                 font-size: 1.5rem;
             }
         }
+
+        /* ── Homepage ── */
+        #homepage {
+            padding: 0;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 5rem 2rem 3.5rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .hero-eyebrow {
+            font-size: 0.75rem;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--sage);
+            margin-bottom: 1.25rem;
+            font-weight: 400;
+        }
+
+        .hero-title {
+            font-size: 3.2rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--dark-text);
+            font-weight: 300;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .hero-body {
+            font-size: 1.05rem;
+            color: var(--warm-grey);
+            line-height: 1.9;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            padding: 0.9rem 2.5rem;
+            background: var(--sage);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.82rem;
+            font-family: 'Avenir Light', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            cursor: pointer;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: background 0.3s ease;
+            font-weight: 300;
+        }
+
+        .hero-cta:hover {
+            background: var(--dark-text);
+        }
+
+        .how-it-works {
+            background: white;
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+            padding: 4rem 2rem;
+        }
+
+        .hp-section-label {
+            text-align: center;
+            font-size: 0.72rem;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--warm-grey);
+            margin-bottom: 0.6rem;
+        }
+
+        .hp-section-heading {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 300;
+            margin-bottom: 3rem;
+            color: var(--dark-text);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .step {
+            text-align: center;
+            padding: 1.25rem;
+        }
+
+        .step-number {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 1px solid var(--sage);
+            color: var(--sage);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+            font-size: 0.9rem;
+        }
+
+        .step-title {
+            font-size: 0.95rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+            color: var(--dark-text);
+        }
+
+        .step-text {
+            font-size: 0.875rem;
+            color: var(--warm-grey);
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .hp-categories {
+            padding: 4rem 2rem;
+        }
+
+        .category-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .category-card {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 1.75rem 2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .category-card:hover {
+            border-left-color: var(--sage);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+            transform: translateY(-3px);
+        }
+
+        .category-card-title {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--dark-text);
+            margin-bottom: 0.4rem;
+        }
+
+        .category-card-desc {
+            font-size: 0.875rem;
+            color: var(--warm-grey);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .retailers-strip {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--border-light);
+            background: white;
+        }
+
+        .retailers-label {
+            font-size: 0.72rem;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--warm-grey);
+            margin-bottom: 1.5rem;
+        }
+
+        .retailer-badges {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .retailer-badge {
+            padding: 0.5rem 1.4rem;
+            border: 1px solid var(--border-light);
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: var(--dark-text);
+            background: var(--cream);
+            font-weight: 300;
+            letter-spacing: 0.4px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.2rem; }
+            .steps-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .category-cards { grid-template-columns: 1fr; }
+            .hero { padding: 3.5rem 1.5rem 2.5rem; }
+        }
     </style>
 </head>
 <body>
@@ -672,8 +874,93 @@
     <!-- Main Content -->
     <div class="main-content">
 
+        <!-- HOMEPAGE -->
+        <div class="page-section active" id="homepage">
+
+            <!-- Hero -->
+            <div class="hero">
+                <p class="hero-eyebrow">Curated for new parents</p>
+                <h1 class="hero-title">Everything your baby needs, sorted.</h1>
+                <p class="hero-body">
+                    Mommy Goose Studio offers carefully curated essential guides for new parents — covering every stage of your baby's first year, from feeding and sleep to travel and bathing. Every pick links directly to trusted retailers like Amazon, Noon, and more, so you can shop smarter without the overwhelm.
+                </p>
+                <button class="hero-cta" onclick="document.getElementById('homepage-categories').scrollIntoView({behavior:'smooth'})">Explore Guides</button>
+            </div>
+
+            <!-- How it works -->
+            <div class="how-it-works">
+                <p class="hp-section-label">How it works</p>
+                <h2 class="hp-section-heading">Shop smarter, not harder</h2>
+                <div class="steps-grid">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-title">Pick a category</div>
+                        <p class="step-text">Browse guides covering every essential — feeding, sleep, diapering, health, and more.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-title">Read honest picks</div>
+                        <p class="step-text">Each guide is researched and written by a first-time mom who has personally used the products.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-title">Shop at trusted retailers</div>
+                        <p class="step-text">Find every item on Amazon, Noon, FirstCry, and more — with direct links for easy ordering.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category cards -->
+            <div class="hp-categories" id="homepage-categories">
+                <p class="hp-section-label">Browse by category</p>
+                <h2 class="hp-section-heading">Essential guides</h2>
+                <div class="category-cards">
+                    <div class="category-card" onclick="switchCategory('feeding', null)">
+                        <div class="category-card-title">Nursing &amp; Feeding</div>
+                        <p class="category-card-desc">Bottles, breast pumps, sterilizers, burp cloths, and everything for feeding your newborn.</p>
+                    </div>
+                    <div class="category-card" onclick="switchCategory('diapering', null)">
+                        <div class="category-card-title">Diapering</div>
+                        <p class="category-card-desc">Diapers, wipes, rash creams, changing mats, and diaper bags.</p>
+                    </div>
+                    <div class="category-card" onclick="switchCategory('sleep', null)">
+                        <div class="category-card-title">Sleep &amp; Nap Time</div>
+                        <p class="category-card-desc">Cribs, bassinets, mattresses, swaddles, and baby monitors.</p>
+                    </div>
+                    <div class="category-card" onclick="switchCategory('bathing', null)">
+                        <div class="category-card-title">Bathing &amp; Grooming</div>
+                        <p class="category-card-desc">Baby tubs, gentle washes, soft towels, and grooming tools.</p>
+                    </div>
+                    <div class="category-card" onclick="switchCategory('health', null)">
+                        <div class="category-card-title">Health &amp; Safety</div>
+                        <p class="category-card-desc">Thermometers, nasal aspirators, first aid essentials, and safety gear.</p>
+                    </div>
+                    <div class="category-card" onclick="switchCategory('travel', null)">
+                        <div class="category-card-title">Travel Gear</div>
+                        <p class="category-card-desc">Car seats, strollers, carriers, and portable accessories for on-the-go parents.</p>
+                    </div>
+                    <div class="category-card" onclick="switchCategory('nursery', null)">
+                        <div class="category-card-title">Nursery &amp; Daily Use</div>
+                        <p class="category-card-desc">Rockers, bouncers, white noise machines, play mats, and nursery essentials.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Retailers strip -->
+            <div class="retailers-strip">
+                <p class="retailers-label">Products available through trusted retailers</p>
+                <div class="retailer-badges">
+                    <span class="retailer-badge">Amazon</span>
+                    <span class="retailer-badge">Noon</span>
+                    <span class="retailer-badge">FirstCry</span>
+                    <span class="retailer-badge">Mumzworld</span>
+                </div>
+            </div>
+
+        </div>
+
         <!-- FEEDING CATEGORY -->
-        <div class="page-section active" id="feeding">
+        <div class="page-section" id="feeding">
             <h1 class="page-title">Nursing & Feeding Essentials</h1>
             <p class="page-description">Everything you need for bottle feeding, breastfeeding, and supplementation—tested through sleepless nights and countless feeds.</p>
 
@@ -2048,7 +2335,8 @@
             if (button && button.classList) {
                 button.classList.add('active');
             } else {
-                document.querySelector(`[onclick*="${categoryId}"]`).classList.add('active');
+                const matchingBtn = document.querySelector(`.category-btn[onclick*="${categoryId}"]`);
+                if (matchingBtn) matchingBtn.classList.add('active');
             }
 
             // Load subcategory content
@@ -2151,13 +2439,12 @@
 
         // HOME
         function goHome() {
-            switchCategory('feeding', null);
+            switchCategory('homepage', null);
         }
 
         // INITIALIZE ON LOAD
         document.addEventListener('DOMContentLoaded', () => {
-            // Render feeding bottles on initial load
-            renderProducts('feeding-bottles', products['feeding-bottles']);
+            // Homepage is shown on load; products render on first category visit
         });
     </script>
 </body>
